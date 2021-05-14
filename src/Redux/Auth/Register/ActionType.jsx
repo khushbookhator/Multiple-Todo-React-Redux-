@@ -1,0 +1,3 @@
+export const REGISTER_SUC = "REGISTER_SUC"
+export const REGISTER_REQ = "REGISTER_REQ"
+export const REGISTER_FAIL = "REGISTER_FAIL"

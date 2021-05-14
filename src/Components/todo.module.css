@@ -1,0 +1,12 @@
+.sidebarouter{
+    width:10%;
+    border:1px solid black;
+    height:99.5vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+}
