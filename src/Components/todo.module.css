@@ -44,3 +44,59 @@
     color: rgb(112,50,39);
     font-weight: bolder;
 }
+.dashout {
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    padding:2%;
+    background-color: #F3EDEC;
+}
+.todo {
+    border: 1px solid #DBCAC6;
+    width: 30%;
+    /* overflow-y: scroll; */
+    text-align: center;
+}
+.todo > div:nth-child(1){
+    background-color: #CFB9B3;
+    padding: 3%;
+    border: 3px solid #884F40;
+    color: #884F40;
+    font-weight: bolder;
+}
+.card {
+    margin: 4% 8%;
+    padding: 0% 0% 5% 5%;
+    border: 2px solid #CFB9B3;
+    text-align: left;
+    color: #884F40;
+}
+.subcheck {
+    display: flex;
+    margin-top: 5px;
+    height: 30px;
+    align-items: center;
+    padding-right: 2%;
+}
+.checks[type="checkbox"] {
+    color: #884F40;
+    background-color: #884F40;
+    width: 40px;
+    margin-left: 0px;
+    border: 1px solid #CFB9B3;
+    cursor: pointer;
+}
+.create {
+    padding:2%;
+    width: 80%;
+    height: 25px;
+    text-decoration: none;
+    margin:0px auto 0px auto;
+    text-align: center;
+    background-color: rgb(196,167,160);
+    outline: none;
+    border: 1px solid rgb(184,149,140);
+    cursor: pointer;
+    color: rgb(112,50,39);
+    font-weight: bolder;
+}

@@ -32,9 +32,9 @@ function Dashboard() {
 
     return(
         <div className={styles.dashout}>
-            <div id="todo">
+            <div id="todo" className={styles.todo}>
                 <div>TODO</div>
-                <div>
+                <div className={styles.card}>
                     {
                         todo?.filter(item => item.status === "Todo").map((it) => (
                             <div>
@@ -43,8 +43,8 @@ function Dashboard() {
                                 <p>{it.description}</p>
                                 <div>{
                                         it.subtasks?.map(subs => (
-                                            <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
+                                            <div key={subs.id} className={styles.subcheck}>
+                                                <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
                                                 <button onClick={() => deleteSubtasks(it, subs)}>DELETE</button>
                                             </div>
@@ -55,9 +55,9 @@ function Dashboard() {
                     }
                 </div>
             </div>
-            <div id="inprogress">
+            <div id="inprogress" className={styles.todo}>
                 <div>IN PROGRESS</div>
-                <div>
+                <div className={styles.card}>
                 {
                         todo?.filter(item => item.status === "InProgress").map((it) => (
                             <div>
@@ -66,8 +66,8 @@ function Dashboard() {
                                 <p>{it.description}</p>
                                 <div>{
                                         it.subtasks?.map(subs => (
-                                            <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
+                                            <div key={subs.id} className={styles.subcheck}>
+                                                <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
                                                 <button>DELETE</button>
                                             </div>
@@ -78,25 +78,25 @@ function Dashboard() {
                     }
                 </div>
             </div>
-            <div id="done">
+            <div id="done" className={styles.todo}>
                 <div>DONE</div>
-                <div>
+                <div className={styles.card}>
                 {
                         todo?.filter(item => item.status === "Done").map((it) => (
-                            <div>
+                            <>
                                 <h3>{it.title}</h3>
                                 {/* <div>{it.tag}</div> */}
                                 <p>{it.description}</p>
                                 <div>{
                                         it.subtasks?.map(subs => (
-                                            <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)}checked={subs.status}/>
+                                            <div key={subs.id} className={styles.subcheck}>
+                                                <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)}checked={subs.status}/>
                                                 <p>{subs.title}</p>
                                                 <button>DELETE</button>
                                             </div>
                                         ))
                                     }</div>
-                            </div>
+                            </>
                         ))
                     }
                 </div>

@@ -12,13 +12,17 @@ const Routes = () => {
                 <div style={{
                     display:"flex"
                 }}>
-                <Sidebar></Sidebar>
-                <Dashboard>
-                </Dashboard>
+                <Sidebar/>
+                <Dashboard/>
                 </div>
             </Route>
             <Route exact path ="/createtask">
+            <div style={{
+                    display:"flex"
+                }}>
+                <Sidebar/>
                 <CreateTasks/>
+                </div>
             </Route>
         </Switch>
     )
