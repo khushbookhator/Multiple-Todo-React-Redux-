@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getTodo } from "../Redux/Todo/Action"
+import { deleteTodo, getTodo, toggleTodo } from "../Redux/Todo/Action"
 
 
 
@@ -11,8 +11,19 @@ function Dashboard() {
     const dispatch = useDispatch()
 
 
-    const changeStatusfromDashboard = () => {
-        
+    const changeStatusfromDashboard = (item, subs) => {
+        const payload = {
+            ...item,
+            subtasks:item.subtasks?.map((el) => el.id === subs.id? {...el, status: !el.status}:el)
+        }
+        dispatch(toggleTodo(payload))
+    }
+    const deleteSubtasks = (item, subs) => {
+        const payload = {
+            ...item,
+            subtasks:item.subtasks?.filter((el) => el.id !== subs.id)
+        }
+        dispatch(deleteTodo(payload))
     }
 
     useEffect(() => {
@@ -33,9 +44,9 @@ function Dashboard() {
                                 <div>{
                                         it.subtasks?.map(subs => (
                                             <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={changeStatusfromDashboard} checked={subs.status}/>
+                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
-                                                <button>DELETE</button>
+                                                <button onClick={() => deleteSubtasks(it, subs)}>DELETE</button>
                                             </div>
                                         ))
                                     }</div>
@@ -56,7 +67,7 @@ function Dashboard() {
                                 <div>{
                                         it.subtasks?.map(subs => (
                                             <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={changeStatusfromDashboard} checked={subs.status}/>
+                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
                                                 <button>DELETE</button>
                                             </div>
@@ -79,7 +90,7 @@ function Dashboard() {
                                 <div>{
                                         it.subtasks?.map(subs => (
                                             <div key={subs.id} style={{display:"flex"}}>
-                                                <input type="checkbox" onChange={changeStatusfromDashboard} checked={subs.status}/>
+                                                <input type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)}checked={subs.status}/>
                                                 <p>{subs.title}</p>
                                                 <button>DELETE</button>
                                             </div>

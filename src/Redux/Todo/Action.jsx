@@ -84,7 +84,34 @@ export const toggleTodoFail = (error)=>{
 
 export const toggleTodo=(payload) => (dispatch) => {
     dispatch(toggleTodoReq())
-    return axios.patch(`https://rest-api-khushboo.herokuapp.com/todos/${payload.id}`, {status : !payload.status}).then(res => dispatch(toggleTodoSuc(res.data))).catch(err => dispatch(toggleTodoFail(err)))
+    return axios.put(`https://rest-api-khushboo.herokuapp.com/multitodo/${payload.id}`, payload).then(res => dispatch(toggleTodoSuc(res.data))).then(() => dispatch(getTodo())).catch(err => dispatch(toggleTodoFail(err)))
+}
+
+//DELETE TODO
+export const deleteTodoReq = ()=>{
+    return{
+        type:TOGGLE_TODO_REQ
+    }
+}
+
+export const deleteTodoSuc = (payload)=>{
+    return{
+        type:TOGGLE_TODO_SUC,
+        payload
+    }
+}
+
+export const deleteTodoFail = (error)=>{
+    return{
+        type:TOGGLE_TODO_FAIL,
+        payload:error
+    }
+}
+
+
+export const deleteTodo=(payload) => (dispatch) => {
+    dispatch(deleteTodoReq())
+    return axios.put(`https://rest-api-khushboo.herokuapp.com/multitodo/${payload.id}`, payload).then(res => dispatch(deleteTodoSuc(res.data))).then(() => dispatch(getTodo())).catch(err => dispatch(deleteTodoFail(err)))
 }
 
 
