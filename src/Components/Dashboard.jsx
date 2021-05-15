@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteTodo, getTodo, toggleTodo } from "../Redux/Todo/Action"
-
+import styles from "./todo.module.css"
 
 
 function Dashboard() {
@@ -31,7 +31,7 @@ function Dashboard() {
     },[dispatch])
 
     return(
-        <div style={{display:"flex", justifyContent:"space-between"}}>
+        <div className={styles.dashout}>
             <div id="todo">
                 <div>TODO</div>
                 <div>

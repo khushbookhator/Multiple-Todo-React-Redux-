@@ -1,14 +1,10 @@
 import './App.css';
-import { AddTodo } from './Components/AddTodo';
-import { Dashboard } from './Components/Dashboard';
-// import { Dashboard } from './Components/Dashboard';
-// import { Sidebar } from './Components/Sidebar';
+import { Routes } from './Routes/Routes';
 
 function App() {
   return (
     <div>
-      <AddTodo/>
-      <Dashboard/>
+      <Routes/>
     </div>
   );
 }

@@ -1,12 +1,46 @@
 .sidebarouter{
-    width:10%;
-    border:1px solid black;
-    height:99.5vh;
+    width:13%;
+    height:100vh;
     display:flex;
     flex-direction:column;
-    justify-content:space-between
+    justify-content:space-between;
+    background-color: rgb(136,79,64);
+    color: rgb(243,237,236);
 }
 .main{
     display: flex;
     justify-content: space-around;
+}
+.user {
+    padding: 5%;
+    border: 1px solid rgb(160,114,102);
+    height:12%;
+    align-items: center;
+}
+.btnsdiv {
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+.btnsdiv > button {
+    padding:2%;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    background-color: rgb(196,167,160);
+    outline: none;
+    border: 1px solid rgb(184,149,140);
+    cursor: pointer;
+    color: rgb(112,50,39);
+    font-weight: bolder;
+}
+.logout{
+    padding: 2.5% 0%;
+    text-align: center;
+    background-color: rgb(196,167,160);
+    outline: none;
+    border: 1px solid rgb(184,149,140);
+    cursor: pointer;
+    color: rgb(112,50,39);
+    font-weight: bolder;
 }

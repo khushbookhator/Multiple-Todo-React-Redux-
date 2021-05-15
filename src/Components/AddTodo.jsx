@@ -2,23 +2,21 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodo } from '../Redux/Todo/Action'
 import styles from "./todo.module.css"
-const init1 = {
+const initValue = {
     title : "",
     description : "",
     status: "",
 }
-const init2 = {
+const initTag = {
     personal:"",
     official:"",
     others: ""
 }
-const AddTodo = () => {
+const CreateTasks = () => {
     const dispatch = useDispatch()
-
-    
     const [arr, setarr] = useState([])
-    const [data, setData] = useState(init1)
-    const [tag, setTag] = useState(init2)
+    const [data, setData] = useState(initValue)
+    const [tag, setTag] = useState(initTag)
     const [subs, setsubs] = useState("")
     const {personal, official, others}= tag
     const {title, description} = data
@@ -58,14 +56,14 @@ const AddTodo = () => {
     return (
         <div className={styles.main}>
             <div className={styles.first}>
-                {/* init1 */}
+                {/* initValue */}
                 <input name="title" value={title} onChange={handleChange} placeholder="TITLE" type="text"/><br/>
                 <textarea name="description" value={description} onChange = {handleChange} placeholder="DESCRIPTION" type="text" /><br/>
-                {/* status init1 */}
+                {/* status initValue */}
                 <input value="Todo" onChange={handleChange} type="radio" name="status"/> Todo<br/>
                 <input value="InProgress" onChange={handleChange} type="radio" name="status"/> In Progress<br/>
                 <input value="Done" onChange={handleChange} type="radio" name="status"/> Done<br/>
-                {/* init2 tags */}
+                {/* initTag tags */}
                 <input value={personal} onChange={handleChange1} type="checkbox" name="personal"/> Personal<br/>
                 <input value={official} onChange={handleChange1} type="checkbox" name="official"/> Official<br/>
                 <input value={others} onChange={handleChange1} type="checkbox" name="others"/> Others<br/>
@@ -96,4 +94,4 @@ const AddTodo = () => {
     )
 }
 
-export {AddTodo}
+export {CreateTasks}
