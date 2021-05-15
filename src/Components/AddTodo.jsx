@@ -57,12 +57,14 @@ const CreateTasks = () => {
         <div className={styles.main}>
             <div className={styles.first}>
                 {/* initValue */}
-                <input name="title" value={title} onChange={handleChange} placeholder="TITLE" type="text"/><br/>
-                <textarea name="description" value={description} onChange = {handleChange} placeholder="DESCRIPTION" type="text" /><br/>
+                <input className={styles.title} name="title" value={title} onChange={handleChange} placeholder="TITLE" type="text"/><br/><br/>
+                <textarea className={styles.des} name="description" value={description} onChange = {handleChange} placeholder="DESCRIPTION" type="text" /><br/>
+                <h4>STATUS</h4>
                 {/* status initValue */}
                 <input value="Todo" onChange={handleChange} type="radio" name="status"/> Todo<br/>
                 <input value="InProgress" onChange={handleChange} type="radio" name="status"/> In Progress<br/>
                 <input value="Done" onChange={handleChange} type="radio" name="status"/> Done<br/>
+                <h4>TAGS</h4>
                 {/* initTag tags */}
                 <input value={personal} onChange={handleChange1} type="checkbox" name="personal"/> Personal<br/>
                 <input value={official} onChange={handleChange1} type="checkbox" name="official"/> Official<br/>

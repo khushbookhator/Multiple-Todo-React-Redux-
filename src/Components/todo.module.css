@@ -8,7 +8,10 @@
     color: rgb(243,237,236);
 }
 .main{
+    width: 100%;
     display: flex;
+    background-color: #F3EDEC;
+    padding: 2%;
     justify-content: space-around;
 }
 .user {
@@ -99,4 +102,38 @@
     cursor: pointer;
     color: rgb(112,50,39);
     font-weight: bolder;
+}
+.first {
+    width: 25%;
+    color: #884F40;
+    font-weight:600;
+    padding: 2%;
+}
+.title {
+    outline: none;
+    font-size:medium;
+    background: transparent;
+    border: none;
+    color: #884F40;
+    border-bottom: 2px solid rgb(184,149,140);
+}
+.des {
+    outline: none;
+    background: transparent;
+    border: 2px solid rgb(184,149,140);
+    width: 65%;
+    min-height: 80px;
+    margin-bottom: 30%;
+    color: #884F40;
+    font-size: 14px;
+}
+.second {
+    width: 28%;
+    border: 1px solid black;
+
+}
+.third {
+    width:28%;
+    border: 1px solid black;
+
 }
