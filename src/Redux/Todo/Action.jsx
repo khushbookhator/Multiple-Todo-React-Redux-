@@ -1,4 +1,4 @@
-import { ADD_TODO_FAIL, ADD_TODO_REQ, ADD_TODO_SUC, GET_TODO_FAIL, GET_TODO_REQ, GET_TODO_SUC } from "./ActionType"
+import { ADD_TODO_FAIL, ADD_TODO_REQ, ADD_TODO_SUC, GET_TODO_FAIL, GET_TODO_REQ, GET_TODO_SUC, TOGGLE_TODO_FAIL, TOGGLE_TODO_REQ, TOGGLE_TODO_SUC } from "./ActionType"
 import axios from "axios"
 
 //GET TODO
@@ -60,32 +60,32 @@ export const addTodo=(payload) => (dispatch) => {
     })
 }
 
-// //TOGGLE TODO
-// export const toggleTodoReq = ()=>{
-//     return{
-//         type:TOGGLE_TODO_REQ
-//     }
-// }
+//TOGGLE TODO
+export const toggleTodoReq = ()=>{
+    return{
+        type:TOGGLE_TODO_REQ
+    }
+}
 
-// export const toggleTodoSuc = (payload)=>{
-//     return{
-//         type:TOGGLE_TODO_SUC,
-//         payload
-//     }
-// }
+export const toggleTodoSuc = (payload)=>{
+    return{
+        type:TOGGLE_TODO_SUC,
+        payload
+    }
+}
 
-// export const toggleTodoFail = (error)=>{
-//     return{
-//         type:TOGGLE_TODO_FAIL,
-//         payload:error
-//     }
-// }
+export const toggleTodoFail = (error)=>{
+    return{
+        type:TOGGLE_TODO_FAIL,
+        payload:error
+    }
+}
 
 
-// export const toggleTodo=(payload) => (dispatch) => {
-//     dispatch(toggleTodoReq())
-//     return axios.patch(`https://rest-api-khushboo.herokuapp.com/todos/${payload.id}`, {status : !payload.status}).then(res => dispatch(toggleTodoSuc(res.data))).catch(err => dispatch(toggleTodoFail(err)))
-// }
+export const toggleTodo=(payload) => (dispatch) => {
+    dispatch(toggleTodoReq())
+    return axios.patch(`https://rest-api-khushboo.herokuapp.com/todos/${payload.id}`, {status : !payload.status}).then(res => dispatch(toggleTodoSuc(res.data))).catch(err => dispatch(toggleTodoFail(err)))
+}
 
 
 
