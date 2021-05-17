@@ -72,18 +72,18 @@ const CreateTasks = () => {
             </div>
             <div className={styles.second}>
                 <div>
-                    <input value={subs} onChange={(e) => setsubs(e.target.value)}/>
-                    <button onClick={addSubs}>ADD</button>
+                    <input placeholder="Add Subtitle" value={subs} onChange={(e) => setsubs(e.target.value)}/>
+                    <button onClick={addSubs}>+</button>
                 </div>
                 <div>
                     {arr?.map((item) => (
-                        <div>
+                        <div className={styles.subcheck2}>
                             <input value={item.status}
                             onChange={() => handletogglesubs(item)}
                             name="substatus"
                             type="checkbox"/>
                             <p>{item.title}</p>
-                            <button onClick={() => handledeletesubs(item.id)}>DELETE</button>
+                            <button className={styles.deleteicon} onClick={() => handledeletesubs(item.id)}><img src="https://img.icons8.com/material-sharp/2x/delete-sign.png" alt="del"/></button>
                         </div>
                     ))}
                 </div>

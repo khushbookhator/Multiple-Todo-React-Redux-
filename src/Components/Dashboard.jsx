@@ -46,7 +46,7 @@ function Dashboard() {
                                             <div key={subs.id} className={styles.subcheck}>
                                                 <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
-                                                <button onClick={() => deleteSubtasks(it, subs)}>DELETE</button>
+                                                <button className={styles.deleteicon} onClick={() => deleteSubtasks(it, subs)}><img src="https://img.icons8.com/material-sharp/2x/delete-sign.png" alt="del"/></button>
                                             </div>
                                         ))
                                     }</div>
@@ -69,7 +69,7 @@ function Dashboard() {
                                             <div key={subs.id} className={styles.subcheck}>
                                                 <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)} checked={subs.status}/>
                                                 <p>{subs.title}</p>
-                                                <button>DELETE</button>
+                                                <button className={styles.deleteicon} onClick={() => deleteSubtasks(it, subs)}><img src="https://img.icons8.com/material-sharp/2x/delete-sign.png" alt="del"/></button>
                                             </div>
                                         ))
                                     }</div>
@@ -92,7 +92,7 @@ function Dashboard() {
                                             <div key={subs.id} className={styles.subcheck}>
                                                 <input className={styles.checks} type="checkbox" onChange={() => changeStatusfromDashboard(it, subs)}checked={subs.status}/>
                                                 <p>{subs.title}</p>
-                                                <button>DELETE</button>
+                                                <button className={styles.deleteicon} onClick={() => deleteSubtasks(it, subs)}><img src="https://img.icons8.com/material-sharp/2x/delete-sign.png" alt="del"/></button>
                                             </div>
                                         ))
                                     }</div>

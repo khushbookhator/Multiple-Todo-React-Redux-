@@ -129,11 +129,54 @@
 }
 .second {
     width: 28%;
-    border: 1px solid black;
-
+    padding: 2%;
+}
+.second > div > input {
+    border: none;
+    color: rgb(184,149,140);
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid rgb(184,149,140);
+}
+.second > div > button {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 23px;
+    color: rgb(184,149,140);
+    background: transparent;
 }
 .third {
     width:28%;
-    border: 1px solid black;
+    padding: 2%;
+}
+.third > button {
+    margin-top: 20%;
+    background: #884F40;
+    color: #F3EDEC;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    padding: 4%;
+    cursor: pointer;
+}
+.deleteicon {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.deleteicon > img {
+    width:15px
 
+}
+.subcheck2 {
+    display: flex;
+    width: 52%;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(184,149,140);
+    font-weight: 600;
 }
